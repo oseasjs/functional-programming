@@ -26,7 +26,7 @@ public class SupplierInterfaceTest {
         Person matt = SupplierInterface.mattFromAdhocPersonList.get();
 
         Assert.assertNotNull(matt);
-        Assert.assertEquals(matt.getName(), SupplierInterface.MATT_NAME);
+        Assert.assertNotEquals(matt.getName(), SupplierInterface.MATT_NAME);
 
     }
 

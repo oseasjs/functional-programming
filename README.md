@@ -2,7 +2,7 @@
 
 * Inspired on: [Functional Programming](https://github.com/amigoscode/java-functional-programming)
 
-### Build Branches Status
+### Build Status
 
 ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg)
 
