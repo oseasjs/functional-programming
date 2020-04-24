@@ -2,9 +2,10 @@
 
 * Inspired on: [Functional Programming](https://github.com/amigoscode/java-functional-programming)
 
-### Build Status
+### Build Branches Status
 
-![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg)
+* Develop: ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=develop)
+* Master: ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=master)
 
 
 ### Dependences
