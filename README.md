@@ -7,7 +7,6 @@
 * Develop: ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=develop)
 * Master: ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=master)
 
-
 ### Dependences
 
 * Maven 3 or higher
