@@ -3,8 +3,8 @@
 * Inspired on: [Functional Programming](https://github.com/amigoscode/java-functional-programming)
 
 ### Build Status
-* Develop Branch: ![Develop Branch](https://github.com/oseasjs/functional-programming/workflows/Java%20CI%20with%20Maven/badge.svg?branch=develop)
-* Master Branch: ![Java CI with Maven](https://github.com/oseasjs/functional-programming/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+* Develop Branch: ![Develop Branch](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=develop)
+* Master Branch: ![Master Branch](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=master)
 
 ### Dependences
 
