@@ -11,12 +11,12 @@ import java.util.function.Supplier;
 @FunctionalInterface
 public interface PersonLambdaFunctionalInterface {
 
-    public static final Person NICK = new Person("Nick", 10);
+    public static final Person ADHOC_NICK = new Person("Nick", 10);
 
     abstract String getPersonName(Person person);
 
     // Zero Parameter
-    public static Supplier<String> nickPersonToUpperCase = () -> NICK.getName().toUpperCase();
+    public static Supplier<String> nickPersonToUpperCase = () -> ADHOC_NICK.getName().toUpperCase();
 
     //One Typed Parameter
     public static Consumer<Person> checkPerson = (person) -> Optional

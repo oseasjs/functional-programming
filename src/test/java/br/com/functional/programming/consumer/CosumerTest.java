@@ -28,7 +28,7 @@ public class CosumerTest {
 
     @Test
     public void isPersonOnAgeLimitSuccess() {
-        checkPersonYongerThanOther.accept(MIKE, JULIE);
+        checkPersonYoungerThanOther.accept(MIKE, JULIE);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class CosumerTest {
         expectedException.expectMessage(INVALID_PERSON_AGE);
         expectedException.expect(RuntimeException.class);
 
-        checkPersonYongerThanOther.accept(MIKE, JOHN);
+        checkPersonYoungerThanOther.accept(MIKE, JOHN);
 
     }
 

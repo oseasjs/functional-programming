@@ -16,7 +16,7 @@ public interface ConsumerInterface {
             .filter(p -> p.getAge() > 18)
             .orElseThrow(() -> new RuntimeException(INVALID_PERSON_AGE));
 
-    BiConsumer<Person, Person> checkPersonYongerThanOther = (person, other) ->
+    BiConsumer<Person, Person> checkPersonYoungerThanOther = (person, other) ->
         Optional
             .ofNullable(person)
             .filter(p -> p.getAge() <= other.getAge())

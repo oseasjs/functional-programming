@@ -31,7 +31,7 @@ public class CallbackServiceTest {
         List<Person> personList = new ArrayList<>(PERSON_LIST_WITH_MIKE);
         personList.add(jeffrey);
 
-        callbackService.filterPersonAndDoSomethingIt(jeffrey, personList,
+        callbackService.filterPersonByNameAndDoSomethingWithIt(JEFFREY_NAME, personList,
                 jeff -> jeff.setAge(TWENTY));
 
         Assert.assertNotEquals(jeffrey.getAge(), TEN);
@@ -46,7 +46,7 @@ public class CallbackServiceTest {
         List<Person> personList = new ArrayList<>(PERSON_LIST_WITH_MIKE);
         personList.add(jeffrey);
 
-        callbackService.filterPersonAndDoSomethingIt(jeffrey, personList,
+        callbackService.filterPersonByNameAndDoSomethingWithIt(JEFFREY_NAME, personList,
                 jeff -> jeff.setName(NICK_NAME));
 
         Assert.assertNotEquals(jeffrey.getName(), JEFFREY_NAME);

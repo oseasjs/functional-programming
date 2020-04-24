@@ -10,17 +10,17 @@ import static br.com.functional.programming.mock.PersonMock.MIKE;
 
 public class FunctionInterfaceTest {
 
-    private Person JEFREY;
+    private Person MARK;
 
     @Before
     public void init() {
-        JEFREY = new Person("Jefrey", 15);
+        MARK = new Person("Mark", 15);
     }
 
     @Test
     public void isYongerThanSuccess() {
 
-        Boolean result = isYongerThan.apply(JEFREY, MIKE);
+        Boolean result = isYongerThan.apply(MARK, MIKE);
         Assert.assertTrue(result);
 
     }
@@ -28,7 +28,7 @@ public class FunctionInterfaceTest {
     @Test
     public void isNotYongerThanSuccess() {
 
-        Boolean result = isYongerThan.apply(MIKE, JEFREY);
+        Boolean result = isYongerThan.apply(MIKE, MARK);
         Assert.assertFalse(result);
 
     }
@@ -36,12 +36,12 @@ public class FunctionInterfaceTest {
     @Test
     public void isJohnAnAdultSuccess() {
 
-        Person oldJefrey = incrementOneYearOnPersonAge
+        Person oldPerson = incrementOneYearOnPersonAge
                 .andThen(incrementOneYearOnPersonAge)
                 .andThen(incrementOneYearOnPersonAge)
-                .apply(JEFREY);
+                .apply(MARK);
 
-        Assert.assertTrue(oldJefrey.getAge() == 18);
+        Assert.assertTrue(oldPerson.getAge() == 18);
 
     }
 
@@ -49,7 +49,7 @@ public class FunctionInterfaceTest {
     public void isJohnAnAcientSuccess() {
 
         Person oldJefrey = addYearsPersonAge
-                .apply(JEFREY, 45);
+                .apply(MARK, 45);
 
         Assert.assertTrue(oldJefrey.getAge() == 60);
 

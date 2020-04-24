@@ -45,7 +45,7 @@ public class PersonLambdaFuncionalInterfaceTest {
     public void isNickNameUpperCaseSuccess() {
 
         String nickNameUpperCase = PersonLambdaFunctionalInterface.nickPersonToUpperCase.get();
-        Assert.assertNotNull(PersonLambdaFunctionalInterface.NICK.getName(), nickNameUpperCase);
+        Assert.assertNotNull(PersonLambdaFunctionalInterface.ADHOC_NICK.getName(), nickNameUpperCase);
 
     }
 
