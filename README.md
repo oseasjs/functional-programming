@@ -6,8 +6,8 @@
 
 | Branch        | Build         | Coverage  |
 | ------------- |:-------------:| ---------:|
-| Develop       | ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=develop) | [![codecov](https://codecov.io/gh/oseasjs/functional-programming/branch/develop/graph/badge.svg)](https://codecov.io/gh/oseasjs/functional-programming) |
-| Master        | ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=master)  | [![codecov](https://codecov.io/gh/oseasjs/functional-programming/branch/master/graph/badge.svg)](https://codecov.io/gh/oseasjs/functional-programming)  |
+| Develop       | ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=develop) | [![codecov](https://codecov.io/gh/oseasjs/functional-programming/branch/develop/graph/badge.svg)](https://codecov.io/gh/oseasjs/functional-programming/branch/develop) |
+| Master        | ![Build](https://github.com/oseasjs/functional-programming/workflows/Build/badge.svg?branch=master)  | [![codecov](https://codecov.io/gh/oseasjs/functional-programming/branch/master/graph/badge.svg)](https://codecov.io/gh/oseasjs/functional-programming/branch/master)  |
 
 
 
