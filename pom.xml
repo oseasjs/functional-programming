@@ -46,7 +46,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.3</version>
                 <configuration>
-                    <exclude>br/com/functional/programming/dto/**</exclude>
+                    <exclude>**/dto/**</exclude>
                 </configuration>
                 <executions>
                     <execution>
