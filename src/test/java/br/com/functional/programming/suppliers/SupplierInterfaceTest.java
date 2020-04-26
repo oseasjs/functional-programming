@@ -16,7 +16,7 @@ public class SupplierInterfaceTest {
         Assert.assertNotNull(list);
         Assert.assertEquals(2, list.size());
         Assert.assertEquals(list.get(0).getName(), SupplierInterface.MATT_NAME);
-        Assert.assertNotEquals(list.get(1).getName(), SupplierInterface.JANE_NAME);
+        Assert.assertEquals(list.get(1).getName(), SupplierInterface.JANE_NAME);
 
     }
 
