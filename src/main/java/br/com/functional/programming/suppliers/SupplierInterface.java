@@ -8,10 +8,11 @@ import java.util.function.Supplier;
 public class SupplierInterface {
 
     static final String MATT_NAME = "Matt";
+    static final String JANE_NAME = "Jane";
 
     static Supplier<List<Person>> adhocPersonList = () -> List.of(
         new Person(MATT_NAME, 20),
-        new Person("Jane", 25)
+        new Person(JANE_NAME, 25)
     );
 
     static Supplier<Person> mattFromAdhocPersonList = () -> adhocPersonList
