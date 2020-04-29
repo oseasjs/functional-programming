@@ -11,22 +11,23 @@ import java.util.function.Supplier;
 @FunctionalInterface
 public interface PersonLambdaFunctionalInterface {
 
-    public static final Person ADHOC_NICK = new Person("Nick", 10);
+    Person ADHOC_NICK = new Person("Nick", 10);
 
-    abstract String getPersonName(Person person);
+    String getPersonName(Person person);
 
     // Zero Parameter
-    public static Supplier<String> nickPersonToUpperCase = () -> ADHOC_NICK.getName().toUpperCase();
+    Supplier<String> nickPersonToUpperCase = () -> ADHOC_NICK.getName().toUpperCase(); // Impure
 
     //One Typed Parameter
-    public static Consumer<Person> checkPerson = (person) -> Optional
+    Consumer<Person> checkPerson = (person) -> Optional
             .ofNullable(person)
-            .orElseThrow(() ->new RuntimeException(Person.NOT_FOUND_MESSAGE));
+            .orElseThrow(() ->new RuntimeException(Person.NOT_FOUND_MESSAGE)); // Impure
 
     // One Typed Parameter using Function
-    public static Function<Person, String> personNameUpperCase = (person) -> person.getName().toUpperCase();
+    Function<Person, String> personNameUpperCase = (person) -> person.getName().toUpperCase();
 
     // Multiple Typed parameter using BiFunction
-    public static BiFunction<Person, String, String> personNameComplement = (person, complement) -> person.getName().concat(complement);
+    BiFunction<Person, String, String> personNameComplement = (person, complement) ->
+            person.getName().concat(complement); // Side Effect
 
 }

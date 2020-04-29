@@ -8,18 +8,18 @@ import java.util.function.Consumer;
 
 public interface ConsumerInterface {
 
-    String INVALID_PERSON_AGE = "Invalid person age";
+    final String INVALID_PERSON_AGE = "Invalid person age";
 
     Consumer<Person> checkIsAnAdult = person ->
         Optional
             .ofNullable(person)
             .filter(p -> p.getAge() > 18)
-            .orElseThrow(() -> new RuntimeException(INVALID_PERSON_AGE));
+            .orElseThrow(() -> new RuntimeException(INVALID_PERSON_AGE)); // Impure
 
     BiConsumer<Person, Person> checkPersonYoungerThanOther = (person, other) ->
         Optional
             .ofNullable(person)
             .filter(p -> p.getAge() <= other.getAge())
-            .orElseThrow(() -> new NumberFormatException(INVALID_PERSON_AGE));
+            .orElseThrow(() -> new NumberFormatException(INVALID_PERSON_AGE)); // Impure
 
 }

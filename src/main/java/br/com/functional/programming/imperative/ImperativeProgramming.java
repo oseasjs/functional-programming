@@ -6,13 +6,24 @@ import java.util.List;
 
 public class ImperativeProgramming {
 
-    public Person findPersonOnList(Person person, List<Person> list) {
+    public Person findPersonByNameOnList(String personName, List<Person> list) {
 
-        return list
-            .stream()
-            .filter(p -> p.toString().equals(person.toString()))
-            .findFirst()
-            .orElseThrow(() -> new RuntimeException(Person.NOT_FOUND_MESSAGE));
+        Person personFound = null;
+
+        for (Person p : list) {
+
+            if (p.getName().equals(personName)) {
+                personFound = p;
+                break;
+            }
+
+        }
+
+        if (personFound == null) {
+            throw new RuntimeException(Person.NOT_FOUND_MESSAGE);
+        }
+
+        return personFound;
 
     }
 

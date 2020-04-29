@@ -27,8 +27,8 @@ public class ImperativeDeclarativeProgrammingTest {
     @Test
     public void compareImperativeDeclarativeProgrammingSuccess() {
 
-        Person personFoundImp = imperativeProgramming.findPersonOnList(MIKE, PERSON_LIST_WITH_MIKE);
-        Person personFoundDec = declarativeProgramming.findPersonOnList(MIKE, PERSON_LIST_WITH_MIKE);
+        Person personFoundImp = imperativeProgramming.findPersonByNameOnList(MIKE.getName(), PERSON_LIST_WITH_MIKE);
+        Person personFoundDec = declarativeProgramming.findPersonByNameOnList(MIKE.getName(), PERSON_LIST_WITH_MIKE);
 
         Assert.assertNotNull(personFoundImp);
         Assert.assertEquals(MIKE.getName(), personFoundImp.getName());
@@ -43,7 +43,7 @@ public class ImperativeDeclarativeProgrammingTest {
     @Test
     public void isImperativeFindPersonOnListSuccess() {
 
-        Person personFound = imperativeProgramming.findPersonOnList(MIKE, PERSON_LIST_WITH_MIKE);
+        Person personFound = imperativeProgramming.findPersonByNameOnList(MIKE.getName(), PERSON_LIST_WITH_MIKE);
 
         Assert.assertNotNull(personFound);
         Assert.assertEquals(MIKE.getName(), personFound.getName());
@@ -52,19 +52,19 @@ public class ImperativeDeclarativeProgrammingTest {
     }
 
     @Test
-    public void isImperativeDeclarativeFindPersonOnListFailed() {
+    public void isImperativeFindPersonOnListFailed() {
 
         expectedException.expectMessage(Person.NOT_FOUND_MESSAGE);
         expectedException.expect(RuntimeException.class);
 
-        imperativeProgramming.findPersonOnList(MIKE, PERSON_LIST_WITHOUT_MIKE);
+        imperativeProgramming.findPersonByNameOnList(MIKE.getName(), PERSON_LIST_WITHOUT_MIKE);
 
     }
 
     @Test
     public void isDeclarativeFindPersonOnListSuccess() {
 
-        Person personFound = declarativeProgramming.findPersonOnList(MIKE, PERSON_LIST_WITH_MIKE);
+        Person personFound = declarativeProgramming.findPersonByNameOnList(MIKE.getName(), PERSON_LIST_WITH_MIKE);
 
         Assert.assertNotNull(personFound);
         Assert.assertEquals(MIKE.getName(), personFound.getName());
@@ -78,7 +78,7 @@ public class ImperativeDeclarativeProgrammingTest {
         expectedException.expectMessage(Person.NOT_FOUND_MESSAGE);
         expectedException.expect(RuntimeException.class);
 
-        declarativeProgramming.findPersonOnList(MIKE, PERSON_LIST_WITHOUT_MIKE);
+        declarativeProgramming.findPersonByNameOnList(MIKE.getName(), PERSON_LIST_WITHOUT_MIKE);
 
     }
 

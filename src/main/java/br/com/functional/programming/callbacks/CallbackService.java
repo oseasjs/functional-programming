@@ -14,7 +14,9 @@ public class CallbackService {
                 .filter(p -> p.getName().equals(personName))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException(Person.NOT_FOUND_MESSAGE));
+
         callback.accept(personFound);
+        
     }
 
 }
