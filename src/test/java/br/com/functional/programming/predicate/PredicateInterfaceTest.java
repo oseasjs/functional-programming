@@ -13,7 +13,7 @@ import static br.com.functional.programming.predicate.PredicateInterface.*;
 public class PredicateInterfaceTest {
 
     @Test
-    public void getPersonWithNameNameStartingWithJValidStaticSuccess() {
+    public void shouldPersonWithNameNameStartingWithJValidStaticSuccess() {
 
         List<Person> list = PERSON_LIST_WITH_MIKE
                 .stream()
@@ -27,7 +27,7 @@ public class PredicateInterfaceTest {
     }
 
     @Test
-    public void getPersonWithNameStartingWithJValidSuccess() {
+    public void shouldPersonWithNameStartingWithJValidSuccess() {
 
         List<Person> list = PERSON_LIST_WITH_MIKE
                 .stream()
@@ -43,7 +43,7 @@ public class PredicateInterfaceTest {
     }
 
     @Test
-    public void getPeopleAdultsByAgeSuccess() {
+    public void shouldPeopleAdultsByAgeSuccess() {
 
         List<Person> list = PERSON_LIST_WITH_MIKE
                 .stream()
@@ -59,7 +59,7 @@ public class PredicateInterfaceTest {
     }
 
     @Test
-    public void getPeopleAdultsSuccess() {
+    public void shouldPeopleAdultsSuccess() {
 
         List<Person> list = PERSON_LIST_WITH_MIKE
                 .stream()
@@ -71,6 +71,20 @@ public class PredicateInterfaceTest {
         Assert.assertEquals(list.get(0).getName(), MIKE.getName());
         Assert.assertEquals(list.get(1).getName(), NANCY.getName());
         Assert.assertEquals(list.get(2).getName(), JULIE.getName());
+
+    }
+
+    @Test
+    public void shouldPeopleAdultsAndNameStartingWithJSuccess() {
+
+        List<Person> list = PERSON_LIST_WITH_MIKE
+                .stream()
+                .filter(isPersonAnAdultAndNameStartingWithJ)
+                .collect(Collectors.toList());;
+
+        Assert.assertNotNull(list);
+        Assert.assertEquals(1, list.size());
+        Assert.assertEquals(list.get(0).getName(), JULIE.getName());
 
     }
 

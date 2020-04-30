@@ -7,7 +7,7 @@ import java.util.List;
 public interface PersonMock {
 
     final Person MIKE =  new Person("Mike", 20);
-    final Person NANCY =  new Person("NANCY", 25);
+    final Person NANCY =  new Person("Nancy", 25);
     final Person JOHN =  new Person("John", 15);
     final Person JULIE =  new Person("Julie", 35);
 

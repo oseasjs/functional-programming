@@ -10,16 +10,15 @@ public interface PredicateInterface {
         return name.startsWith("J") && name.length() > 4;
     }
 
-    static Predicate<Integer> isAnAdult = age ->
-            age >= 18;
+    Predicate<Integer> isAnAdult = age -> age >= 18;
 
-    static Predicate<String> isNameStartingWithJ = name ->
-            name.startsWith("J");
+    Predicate<String> isNameStartingWithJ = name -> name.startsWith("J");
 
-    static Predicate<String> isNameLengthHigherThan4 = name ->
-            name.length() > 4;
+    Predicate<String> isNameLengthHigherThan4 = name -> name.length() > 4;
 
-    static Predicate<Person> isPersonAnAdult = person ->
-            person.getAge() > 18;
+    Predicate<Person> isPersonAnAdult = person -> person.getAge() > 18;
+
+    Predicate<Person> isPersonAnAdultAndNameStartingWithJ = person ->
+            person.getAge() > 18 && person.getName().startsWith("J");
 
 }

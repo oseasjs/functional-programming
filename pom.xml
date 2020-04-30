@@ -41,11 +41,15 @@
                     <target>11</target>
                 </configuration>
             </plugin>
-            <!--
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.3</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/dto/**</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -61,7 +65,6 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
 
         </plugins>
     </build>

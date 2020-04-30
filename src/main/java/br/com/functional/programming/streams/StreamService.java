@@ -43,7 +43,7 @@ public class StreamService {
                 .stream()
                 .mapToInt(Person::getAge)
                 .max()
-                .orElseThrow(() -> new RuntimeException());
+                .getAsInt();
 
     }
 
@@ -73,10 +73,8 @@ public class StreamService {
 
         return listA.stream()
                 .filter(personA -> listB
-                        .stream()
-                        .filter(personB -> personA.getName().equals(personB.getName()))
-                        .findAny()
-                        .isPresent()
+                    .stream()
+                    .anyMatch(personB -> personA.getName().equals(personB.getName()))
                 )
                 .collect(Collectors.toList());
 

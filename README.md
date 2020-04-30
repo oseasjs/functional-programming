@@ -28,6 +28,7 @@
 * Declarative Programming
 * Streams
 * Optional
+* Suppliers
 * Consumers
 * Producers
 * Functions

@@ -8,16 +8,16 @@ import java.util.function.Function;
 public interface FunctionInterface {
 
     Function<Person, Person> incrementOneYearOnPersonAge = (person) -> {
-        person.setAge(person.getAge() + 1);
+        person.setAge(person.getAge() + 1); // Side Effect
         return person;
     };
 
     BiFunction<Person, Integer, Person> addYearsPersonAge = (person, years) -> {
-        person.setAge(person.getAge() + years);
+        person.setAge(person.getAge() + years); // Side Effect
         return person;
     };
 
     BiFunction<Person, Person, Boolean> isYongerThan = (personA, personB) ->
-            personA.getAge() < personB.getAge();
+            personA.getAge() < personB.getAge(); // Side Effect FREE
 
 }

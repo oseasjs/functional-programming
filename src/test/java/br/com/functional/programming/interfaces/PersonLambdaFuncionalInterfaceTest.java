@@ -6,7 +6,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static br.com.functional.programming.mock.PersonMock.MIKE;
+import static br.com.functional.programming.mock.PersonMock.PERSON_LIST_WITH_MIKE;
 
 public class PersonLambdaFuncionalInterfaceTest {
 
@@ -42,6 +46,62 @@ public class PersonLambdaFuncionalInterfaceTest {
     }
 
     @Test
+    public void isPersonNameUpperCaseLambdaSuccess() {
+
+        PersonLambdaFunctionalInterface funcPersonNameUpperCase = (person) -> person.getName().toUpperCase();
+        String mikeName = funcPersonNameUpperCase.getPersonName(MIKE);
+
+        Assert.assertNotNull(mikeName);
+        Assert.assertEquals(MIKE.getName().toUpperCase(), mikeName);
+
+    }
+
+    @Test
+    public void isPersonNameLowerCaseLambdaSuccess() {
+
+        PersonLambdaFunctionalInterface funcPersonNameUpperCase = (person) -> person.getName().toLowerCase();
+        String mikeName = funcPersonNameUpperCase.getPersonName(MIKE);
+
+        Assert.assertNotNull(mikeName);
+        Assert.assertEquals(MIKE.getName().toLowerCase(), mikeName);
+
+    }
+
+    @Test
+    public void isPersonNameUpperCaseFromListSuccess() {
+
+        PersonLambdaFunctionalInterface funcPersonNameUpperCase = (person) -> person.getName().toUpperCase();
+
+        List<String> personNameList = PERSON_LIST_WITH_MIKE
+                .stream()
+                .map(p -> funcPersonNameUpperCase.getPersonName(p))
+                .collect(Collectors.toList());
+
+        Assert.assertEquals(personNameList.get(0), PERSON_LIST_WITH_MIKE.get(0).getName().toUpperCase());
+        Assert.assertEquals(personNameList.get(1), PERSON_LIST_WITH_MIKE.get(1).getName().toUpperCase());
+        Assert.assertEquals(personNameList.get(2), PERSON_LIST_WITH_MIKE.get(2).getName().toUpperCase());
+        Assert.assertEquals(personNameList.get(3), PERSON_LIST_WITH_MIKE.get(3).getName().toUpperCase());
+
+    }
+
+    @Test
+    public void isPersonNameLowerCaseFromListSuccess() {
+
+        PersonLambdaFunctionalInterface funcPersonNameUpperCase = (person) -> person.getName().toLowerCase();
+
+        List<String> personNameList = PERSON_LIST_WITH_MIKE
+                .stream()
+                .map(p -> funcPersonNameUpperCase.getPersonName(p))
+                .collect(Collectors.toList());
+
+        Assert.assertEquals(personNameList.get(0), PERSON_LIST_WITH_MIKE.get(0).getName().toLowerCase());
+        Assert.assertEquals(personNameList.get(1), PERSON_LIST_WITH_MIKE.get(1).getName().toLowerCase());
+        Assert.assertEquals(personNameList.get(2), PERSON_LIST_WITH_MIKE.get(2).getName().toLowerCase());
+        Assert.assertEquals(personNameList.get(3), PERSON_LIST_WITH_MIKE.get(3).getName().toLowerCase());
+
+    }
+
+    @Test
     public void isNickNameUpperCaseSuccess() {
 
         String nickNameUpperCase = PersonLambdaFunctionalInterface.nickPersonToUpperCase.get();
@@ -71,7 +131,7 @@ public class PersonLambdaFuncionalInterfaceTest {
     }
 
     @Test
-    public void isMikeNameComplementSuccess() {
+    public void isMikeNameComplementedSuccess() {
         String nameComplement = " Test";
         String mikeNameComplete = PersonLambdaFunctionalInterface.personNameComplement.apply(MIKE, nameComplement);
         Assert.assertNotEquals(MIKE.getName(), mikeNameComplete);
