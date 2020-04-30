@@ -49,7 +49,8 @@ public class OptionalServiceTest {
     public void getPersonNameNullableNullSuccess() {
 
         String name = optionalService.getPersonNameOrEmptyString(Optional.empty());
-        Assert.assertNull(name);
+        Assert.assertNotNull(name);
+        Assert.assertEquals("", name);
 
     }
 

@@ -14,11 +14,11 @@ public interface PredicateInterface {
 
     Predicate<String> isNameStartingWithJ = name -> name.startsWith("J");
 
-    Predicate<String> isNameLengthHigherThan4 = name -> name.length() > 4;
+    Predicate<String> isNameLengthHigherThan4 = name -> name.length() >= 4;
 
-    Predicate<Person> isPersonAnAdult = person -> person.getAge() > 18;
+    Predicate<Person> isPersonAnAdult = person -> person.getAge() >= 18;
 
     Predicate<Person> isPersonAnAdultAndNameStartingWithJ = person ->
-            person.getAge() > 18 && person.getName().startsWith("J");
+            person.getAge() >= 18 && person.getName().startsWith("J");
 
 }

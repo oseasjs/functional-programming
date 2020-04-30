@@ -15,7 +15,7 @@ public class OptionalService {
     public String getPersonNameOrEmptyString(Optional<Person> person) {
         return person
                 .map(Person::getName)
-                .orElse(null);
+                .orElse("");
     }
 
 }

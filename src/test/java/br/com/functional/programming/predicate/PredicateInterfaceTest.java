@@ -37,8 +37,9 @@ public class PredicateInterfaceTest {
                 .collect(Collectors.toList());
 
         Assert.assertNotNull(list);
-        Assert.assertEquals(1, list.size());
-        Assert.assertEquals(list.get(0).getName(), JULIE.getName());
+        Assert.assertEquals(2, list.size());
+        Assert.assertEquals(list.get(0).getName(), JOHN.getName());
+        Assert.assertEquals(list.get(1).getName(), JULIE.getName());
 
     }
 

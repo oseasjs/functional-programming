@@ -12,14 +12,14 @@ public interface ConsumerInterface {
 
     Consumer<Person> checkIsAnAdult = person ->
         Optional
-            .ofNullable(person)
-            .filter(p -> p.getAge() > 18)
-            .orElseThrow(() -> new RuntimeException(INVALID_PERSON_AGE)); // Impure
+                .ofNullable(person)
+                .filter(p -> p.getAge() >= 18)
+                .orElseThrow(() -> new RuntimeException(INVALID_PERSON_AGE)); // Impure
 
     BiConsumer<Person, Person> checkPersonYoungerThanOther = (person, other) ->
         Optional
             .ofNullable(person)
-            .filter(p -> p.getAge() <= other.getAge())
+            .filter(p -> p.getAge() < other.getAge())
             .orElseThrow(() -> new NumberFormatException(INVALID_PERSON_AGE)); // Impure
 
 }

@@ -63,11 +63,12 @@ public class StreamServiceTest {
     @Test
     public void peopleWithAgeHigherThanSuccess() {
 
-        List<Person> list = streamService.getPeopleAgeHigherThan(PERSON_LIST_WITH_MIKE, 25);
+        List<Person> list = streamService.getPeopleAgeHigherThan(PERSON_LIST_WITH_MIKE, 24);
 
         Assert.assertNotNull(list);
-        Assert.assertEquals(1, list.size());
-        Assert.assertEquals(list.get(0).getName(), JULIE.getName());
+        Assert.assertEquals(2, list.size());
+        Assert.assertEquals(list.get(0).getName(), NANCY.getName());
+        Assert.assertEquals(list.get(1).getName(), JULIE.getName());
 
     }
 

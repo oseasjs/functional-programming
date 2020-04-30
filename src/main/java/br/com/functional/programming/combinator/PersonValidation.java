@@ -9,7 +9,7 @@ public class PersonValidation {
     }
 
     private boolean isAnAdult(Integer age) {
-        return age > 18;
+        return age >= 18;
     }
 
     public boolean isValid(Person person) {
